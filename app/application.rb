@@ -10,6 +10,6 @@ class Application
     resp.status = 400
   end
 
-      resp.finish
-    end
+    resp.finish
   end
+end
