@@ -10,8 +10,7 @@ class Application
   if req.path.match("/items")
     item = req.params["item"]
     if @@items.include?(item)
-      selected_item = @@items.find{|x| x.name}
-      resp.write selected_item.price
+      binding.pry
     else
       resp.write "Item not found"
       resp.status = 400
