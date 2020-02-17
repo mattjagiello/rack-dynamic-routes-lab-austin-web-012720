@@ -1,5 +1,4 @@
 class Application
-  require 'pry'
 
   @@item = []
 
@@ -8,10 +7,9 @@ class Application
   req = Rack::Request.new(env)
 
   if req.path.match("/items")
-    item = req.params["item"]
-    if @@items.include?(item)
-      puts "Hi"
-      binding.pry
+    item_name = req.path.split("/items/").last
+    if item = @@items.find{|x| x.name == item_name}
+      resp.write selected_item.price
     else
       resp.write "Item not found"
       resp.status = 400
