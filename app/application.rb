@@ -9,9 +9,7 @@ class Application
 
   if req.path.match("/items")
     item = req.params["item"]
-    if @@items.include?(item)
       binding.pry
-    end
     else
       resp.write "Item not found"
       resp.status = 400
