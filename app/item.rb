@@ -8,5 +8,5 @@ class Item
     @price = price
   end
 
-  
+
 end
