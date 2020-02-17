@@ -1,4 +1,5 @@
 class Application
+  require 'pry'
 
   @@item = []
 
